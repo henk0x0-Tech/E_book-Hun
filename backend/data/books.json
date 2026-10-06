@@ -1,0 +1,480 @@
+{
+  "siteConfig": {
+    "brand": "E_Book Hub",
+    "tagline": "The Modern Digital Bookshelf for High-Impact Skills",
+    "heroSubtitle": "Master AI workflows, launch digital businesses, and upgrade your mental models with concise, actionable guides.",
+    "social": {
+      "instagram": "https://instagram.com/ebookhub",
+      "telegram": "https://t.me/ebookhub_official",
+      "twitter": "https://twitter.com/ebookhub"
+    },
+    "stats": {
+      "totalReaders": "110+",
+      "avgRating": 4.9,
+      "totalGuides": 12,
+      "guaranteeDays": 30
+    }
+  },
+  "categories": [
+    { "id": "all", "name": "All Books", "icon": "📚", "count": 12 },
+    { "id": "ai-automation", "name": "AI & Automation", "icon": "⚡", "count": 3 },
+    { "id": "business", "name": "Business & Startups", "icon": "💼", "count": 3 },
+    { "id": "self-growth", "name": "Self Improvement", "icon": "🧠", "count": 2 },
+    { "id": "tech-tools", "name": "Tech & Coding", "icon": "💻", "count": 2 },
+    { "id": "free", "name": "Free Resources", "icon": "🎁", "count": 2 }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "AI Se Paise Kamane Ka 30-Day Blueprint",
+      "shortTitle": "AI Income Blueprint",
+      "category": "AI & Automation",
+      "categoryId": "ai-automation",
+      "price": 29,
+      "oldPrice": 299,
+      "rating": 4.9,
+      "reviewsCount": 184,
+      "pages": 78,
+      "format": "PDF + Notion Hub",
+      "fileSize": "14.2 MB",
+      "badge": "BESTSELLER",
+      "coverColor1": "#1e3a8a",
+      "coverColor2": "#0f172a",
+      "spineColor": "#0b1220",
+      "accentColor": "#60a5fa",
+      "description": "A step-by-step 30-day roadmap to generating sustainable digital income using ChatGPT, Midjourney, Claude, and automation pipelines. Zero coding required — fully beginner friendly with practical Hindi-English walkthroughs.",
+      "learnPoints": [
+        "Top 10 paying AI freelance services in 2025",
+        "Copy-paste cold outreach templates for international clients",
+        "Automated digital product creation pipeline in under 2 hours",
+        "Step-by-step 30-day execution checklist"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Chapter 2: Picking Your High-Leverage AI Service",
+        "text": "The biggest mistake beginners make is trying to offer everything at once. In this chapter, we narrow down your focus into three high-demand niches: AI Copywriting Systems, Automated Lead Research, and Repurposing Long-form Content into Viral Short Clips. When you position yourself as a specialist solving one painful bottleneck, client acquisition transforms from begging for gigs to closing high-ticket retainers."
+      },
+      "author": {
+        "name": "Aryan Sharma",
+        "role": "AI Automation Architect & Creator"
+      }
+    },
+    {
+      "id": 2,
+      "title": "ChatGPT & Claude Prompt Engineering Mastery",
+      "shortTitle": "ChatGPT Mastery",
+      "category": "AI & Automation",
+      "categoryId": "ai-automation",
+      "price": 49,
+      "oldPrice": 349,
+      "rating": 4.95,
+      "reviewsCount": 240,
+      "pages": 112,
+      "format": "Interactive PDF + Prompt Vault",
+      "fileSize": "22.5 MB",
+      "badge": "HOT",
+      "coverColor1": "#0d9488",
+      "coverColor2": "#042f2e",
+      "spineColor": "#02201f",
+      "accentColor": "#2dd4bf",
+      "description": "250+ battle-tested prompt architectures and systemic frameworks to 10x your cognitive throughput. Covers deep research, coding debugging, content strategy, financial analysis, and autonomous workflow chains.",
+      "learnPoints": [
+        "Few-shot, Chain-of-Thought, and Meta-prompting secrets",
+        "Building autonomous mini-agents inside Claude & GPT-4o",
+        "250+ categorized copy-paste prompt templates for instant results",
+        "Reverse-engineering complex problems into structured LLM outputs"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Framework 03: The Persona-Context-Constraint Protocol",
+        "text": "Generic prompts produce generic outputs. By enforcing strict persona definition, precise contextual parameters, negative constraints, and output schema templates, you extract top 1% model outputs every single time. Here is the exact template you should use before asking any LLM a complex reasoning problem..."
+      },
+      "author": {
+        "name": "Kavya Patel",
+        "role": "Prompt Systems Engineer"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Ebook Se Earning Guide: 0 to ₹50,000/Month",
+      "shortTitle": "Ebook Blueprint",
+      "category": "Business & Startups",
+      "categoryId": "business",
+      "price": 39,
+      "oldPrice": 499,
+      "rating": 4.85,
+      "reviewsCount": 156,
+      "pages": 94,
+      "format": "PDF + Canva Templates",
+      "fileSize": "31.0 MB",
+      "badge": "TRENDING",
+      "coverColor1": "#15803d",
+      "coverColor2": "#052e16",
+      "spineColor": "#021c0d",
+      "accentColor": "#4ade80",
+      "description": "The complete roadmap from finding a hungry niche to packaging, pricing, designing with Canva, and launching your digital guides without spending money on ads.",
+      "learnPoints": [
+        "Finding high-intent problems people willingly pay ₹199-₹999 for",
+        "Pre-built Canva cover & interior layout templates included",
+        "Setting up Razorpay/Gumroad frictionless checkout in 10 minutes",
+        "Organic distribution playbooks on Instagram, Threads & Twitter"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Chapter 4: The 48-Hour Micro-Book Creation Sprint",
+        "text": "You do not need a 300-page book to deliver immense value. In fact, modern buyers prefer high-density, no-fluff 30-to-60 page guides that solve one specific problem in one sitting. When you outline with our problem-solution tree, drafting the entire book takes two focused afternoons."
+      },
+      "author": {
+        "name": "Rohan Deshmukh",
+        "role": "Digital Product Builder"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Rich Dad Financial Frameworks (Hinglish Edition)",
+      "shortTitle": "Rich Dad Hinglish",
+      "category": "Self Improvement",
+      "categoryId": "self-growth",
+      "price": 19,
+      "oldPrice": 499,
+      "rating": 4.9,
+      "reviewsCount": 312,
+      "pages": 64,
+      "format": "Illustrated PDF Summary",
+      "fileSize": "11.8 MB",
+      "badge": "POPULAR",
+      "coverColor1": "#9333ea",
+      "coverColor2": "#3b0764",
+      "spineColor": "#24043d",
+      "accentColor": "#c084fc",
+      "description": "Essential wealth-building principles explained in clear, relatable conversational Hinglish. Unpack cashflow quadrants, asset accumulation, and financial mindset in under 45 minutes of reading.",
+      "learnPoints": [
+        "Assets vs Liabilities: The simple distinction that alters wealth",
+        "The Cashflow Quadrant adapted for Indian freelancers & professionals",
+        "Escape the paycheck-to-paycheck cycle with automated investing",
+        "Tax strategy and wealth preservation mental models"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Rule 1: Assets vs Liabilities Ka Asli Matlab",
+        "text": "Garib aur middle class log aisi cheezon ko assets samajh kar kharidte hain jo asal me unki jeb se paisa bahar nikaalti hain. Ek asali asset wo hai jo aapki jeb me paisa daale bina aapke physical presence ke. Jab tak aapka active income assets khareedne me invest nahi hota, tab tak aap rat race me phas rehte hain..."
+      },
+      "author": {
+        "name": "Vikram Mehta",
+        "role": "Financial Wellness Coach"
+      }
+    },
+    {
+      "id": 5,
+      "title": "The Micro-SaaS Playbook: Solo Founder Roadmap",
+      "shortTitle": "Micro-SaaS Bible",
+      "category": "Business & Startups",
+      "categoryId": "business",
+      "price": 59,
+      "oldPrice": 599,
+      "rating": 4.92,
+      "reviewsCount": 110,
+      "pages": 140,
+      "format": "PDF + Notion Starter Kit",
+      "fileSize": "18.4 MB",
+      "badge": "PRO",
+      "coverColor1": "#ea580c",
+      "coverColor2": "#431407",
+      "spineColor": "#290c04",
+      "accentColor": "#fb923c",
+      "description": "How to validate, build, launch, and scale recurring-revenue software products as a single developer. Includes financial models, pricing strategy, and automated churn reduction frameworks.",
+      "learnPoints": [
+        "Unbundling niche enterprise tools into lean $29/mo web utilities",
+        "No-code / low-code stacks that allow shipping MVPs in 7 days",
+        "Cold outreach & ProductHunt launch playbook that got 1,000+ signups",
+        "Stripe billing integration patterns & MRR optimization"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Chapter 1: The Razor-Thin Niche Strategy",
+        "text": "Do not build another general project management tool. Build a compliance tracker specifically for Canadian dental clinics. The narrower your positioning, the less marketing friction you will face, and the higher pricing power you command."
+      },
+      "author": {
+        "name": "Nikhil Varma",
+        "role": "Solo Founder ($12k MRR)"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Full-Stack System Design for High-Scale Apps",
+      "shortTitle": "System Design Handbook",
+      "category": "Tech & Coding",
+      "categoryId": "tech-tools",
+      "price": 49,
+      "oldPrice": 449,
+      "rating": 4.88,
+      "reviewsCount": 98,
+      "pages": 130,
+      "format": "PDF + 40 Architecture Diagrams",
+      "fileSize": "26.1 MB",
+      "badge": "DEV CHOICE",
+      "coverColor1": "#0284c7",
+      "coverColor2": "#082f49",
+      "spineColor": "#041b2b",
+      "accentColor": "#38bdf8",
+      "description": "Visual blueprints for caching, load balancing, sharding, microservices communication, message queues, and distributed databases for high-traffic applications.",
+      "learnPoints": [
+        "Caching strategies (Write-Through, Write-Back, Cache-Aside) with Redis",
+        "CAP theorem and SQL vs NoSQL trade-offs broken down visually",
+        "Rate limiting algorithms (Token Bucket, Leaky Bucket, Sliding Window)",
+        "Real-world case studies: WhatsApp, YouTube, and Uber architectures"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Chapter 5: Designing for Zero-Downtime Cache Invalidation",
+        "text": "There are only two hard things in Computer Science: cache invalidation and naming things. In this chapter, we study stale-while-revalidate protocols combined with Redis pub/sub channels to guarantee near-instant propagation across edge clusters."
+      },
+      "author": {
+        "name": "Devansh Roy",
+        "role": "Principal Systems Engineer"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Atomic Focus: Deep Work & Anti-Distraction Guide",
+      "shortTitle": "Atomic Focus",
+      "category": "Self Improvement",
+      "categoryId": "self-growth",
+      "price": 25,
+      "oldPrice": 399,
+      "rating": 4.94,
+      "reviewsCount": 215,
+      "pages": 88,
+      "format": "PDF + Daily Habit Tracker Sheet",
+      "fileSize": "9.5 MB",
+      "badge": "HIGHLY RATED",
+      "coverColor1": "#be123c",
+      "coverColor2": "#4c0519",
+      "spineColor": "#29020d",
+      "accentColor": "#fb7185",
+      "description": "Neuroscience-backed protocols to eliminate brain fog, destroy phone addiction, structure 4-hour daily deep work blocks, and achieve elite creative output.",
+      "learnPoints": [
+        "Dopamine reset blueprint to regain mental clarity in 72 hours",
+        "The 90-minute ultradian rhythm scheduling system",
+        "Digital environment design that makes distraction friction impossible",
+        "Evening shutdown ritual that ensures deep restorative sleep"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Protocol 2: The Friction Inversion Method",
+        "text": "Willpower is a depletable battery. If you rely on discipline to resist scrolling infinite feeds, you will lose by 4 PM. Instead, we invert friction: make shallow distractions take at least 3 distinct physical actions to access, while making deep work one click away."
+      },
+      "author": {
+        "name": "Dr. Sameer Sen",
+        "role": "Cognitive Performance Researcher"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Modern JavaScript & Node.js Production Architecture",
+      "shortTitle": "Node.js Mastery",
+      "category": "Tech & Coding",
+      "categoryId": "tech-tools",
+      "price": 39,
+      "oldPrice": 399,
+      "rating": 4.91,
+      "reviewsCount": 142,
+      "pages": 120,
+      "format": "PDF + GitHub Repo Access",
+      "fileSize": "19.8 MB",
+      "badge": "POPULAR",
+      "coverColor1": "#ca8a04",
+      "coverColor2": "#422006",
+      "spineColor": "#251202",
+      "accentColor": "#facc15",
+      "description": "Production-grade backend engineering with Node.js, event loops, clustering, JWT authentication, secure REST/GraphQL APIs, Dockerization, and monitoring.",
+      "learnPoints": [
+        "Event loop internals: libuv, microtasks queue, thread pool optimization",
+        "Security hardening: helmet, rate limiting, SQL/NoSQL injection prevention",
+        "Structured logging, health checks, and OpenTelemetry instrumentation",
+        "Zero-downtime deployment pipelines with Docker and PM2"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Chapter 3: Mastering Non-Blocking I/O and Memory Leaks",
+        "text": "A single unhandled promise rejection or an unbounded in-memory array can crash a Node.js process under load. In this section, we build automated heap snapshot profilers and worker thread pools for CPU-heavy tasks."
+      },
+      "author": {
+        "name": "Tanmay Joshi",
+        "role": "Senior Backend Architect"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Organic Brand Building on X & LinkedIn",
+      "shortTitle": "Personal Brand Playbook",
+      "category": "Business & Startups",
+      "categoryId": "business",
+      "price": 35,
+      "oldPrice": 499,
+      "rating": 4.87,
+      "reviewsCount": 128,
+      "pages": 82,
+      "format": "PDF + 50 Viral Hook Templates",
+      "fileSize": "15.0 MB",
+      "badge": "ACTIONABLE",
+      "coverColor1": "#4f46e5",
+      "coverColor2": "#1e1b4b",
+      "spineColor": "#110e30",
+      "accentColor": "#818cf8",
+      "description": "How to turn your expertise into an inbound magnet. Build a high-credibility audience of 10,000+ followers and monetize via consulting, courses, or digital products.",
+      "learnPoints": [
+        "The 3-tier content engine: Broad Authority, Deep Insight, Case Studies",
+        "50 viral hook formulas that capture attention without cheap clickbait",
+        "DM conversion framework to close $500-$2,500 clients organically",
+        "Repurposing 1 long-form idea into 7 multi-platform assets"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Section 2: The Hook Architecture",
+        "text": "Your first line determines 80% of your post performance. If you fail to create a curiosity gap or promise high-utility transformation in under 12 words, readers scroll past immediately. Here is the 'Belief Inversion' formula..."
+      },
+      "author": {
+        "name": "Sneha Kulkarni",
+        "role": "Brand Strategist & Creator"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Autonomous AI Agents with Python & LangChain",
+      "shortTitle": "AI Agents Handbook",
+      "category": "AI & Automation",
+      "categoryId": "ai-automation",
+      "price": 69,
+      "oldPrice": 699,
+      "rating": 4.96,
+      "reviewsCount": 178,
+      "pages": 150,
+      "format": "PDF + Python Jupyter Notebooks",
+      "fileSize": "34.2 MB",
+      "badge": "ADVANCED",
+      "coverColor1": "#059669",
+      "coverColor2": "#022c22",
+      "spineColor": "#011c15",
+      "accentColor": "#34d399",
+      "description": "Master ReAct patterns, tool calling, vector databases (Pinecone/Chroma), memory management, and multi-agent collaboration with LangGraph and CrewAI.",
+      "learnPoints": [
+        "Building autonomous web research and document analysis agents",
+        "RAG architecture with hybrid semantic search and reranking",
+        "Self-correcting code generation loops with execution sandboxes",
+        "Deploying production-ready agents via FastAPI and Docker"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Chapter 6: Planning and Memory in Multi-Agent Graphs",
+        "text": "When agents can critique their own outputs and pass intermediate artifacts to specialized peer nodes, hallucination rates drop by up to 75%. Let's code a 3-agent pipeline: Researcher, Writer, and Fact-Checker."
+      },
+      "author": {
+        "name": "Manish Gupta",
+        "role": "AI Research Engineer"
+      }
+    },
+    {
+      "id": 11,
+      "title": "The Ultimate 100+ AI Tools & Prompt Cheat Sheet",
+      "shortTitle": "100+ AI Tools Vault",
+      "category": "Free Resources",
+      "categoryId": "free",
+      "price": 0,
+      "oldPrice": 199,
+      "rating": 4.97,
+      "reviewsCount": 840,
+      "pages": 45,
+      "format": "Free Instant PDF + Notion Database",
+      "fileSize": "8.1 MB",
+      "badge": "100% FREE",
+      "coverColor1": "#0284c7",
+      "coverColor2": "#0c4a6e",
+      "spineColor": "#082f49",
+      "accentColor": "#38bdf8",
+      "description": "Curated directory of the 100 most powerful AI tools across design, coding, writing, video generation, audio, and marketing. Includes direct links and prompt cheat sheets.",
+      "learnPoints": [
+        "Top free alternatives to paid AI software",
+        "Categorized workflow stacks for creators, coders, and founders",
+        "Instant one-click copy prompt formulas",
+        "Regularly updated Notion database access"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Curated Stack: High-Speed Content Production",
+        "text": "Combine Claude 3.5 Sonnet for structural outlines, Ideogram 2.0 for typographic graphic assets, and ElevenLabs for crystal clear human voiceover to produce studio-grade digital assets in minutes."
+      },
+      "author": {
+        "name": "E_Book Hub Editorial",
+        "role": "Curated Research Team"
+      }
+    },
+    {
+      "id": 12,
+      "title": "Digital Creator Launch Checklist & Tax Guide",
+      "shortTitle": "Creator Toolkit",
+      "category": "Free Resources",
+      "categoryId": "free",
+      "price": 0,
+      "oldPrice": 249,
+      "rating": 4.9,
+      "reviewsCount": 420,
+      "pages": 38,
+      "format": "Free PDF Checklist + Excel Calculator",
+      "fileSize": "6.4 MB",
+      "badge": "100% FREE",
+      "coverColor1": "#d97706",
+      "coverColor2": "#451a03",
+      "spineColor": "#270f02",
+      "accentColor": "#fbbf24",
+      "description": "Essential legal, payment setup, pricing calculator, and GST/income tax guidelines for Indian digital creators and online freelancers starting out.",
+      "learnPoints": [
+        "Step-by-step payment gateway setup checklist (Domestic & International)",
+        "Pricing calculator spreadsheet with tax estimation",
+        "Terms of service and refund policy templates for digital goods",
+        "Invoicing format for global remittances (FIRC guidelines)"
+      ],
+      "sampleExcerpt": {
+        "chapter": "Checklist Item 04: International Payment Compliance",
+        "text": "When receiving USD or EUR payments via Stripe or PayPal, always ensure your bank account is mapped for automatic Purpose Code generation (P0802 for software/digital products) to avoid foreign exchange delays."
+      },
+      "author": {
+        "name": "E_Book Hub Legal & Finance",
+        "role": "Specialized Advisory"
+      }
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Aman Verma",
+      "role": "Freelance Copywriter",
+      "avatar": "AV",
+      "stars": 5,
+      "text": "The AI Income Blueprint paid for itself within 48 hours. I closed my first international client for $150 using the exact cold outreach prompt in Chapter 3!",
+      "book": "AI Se Paise Kamane Ka 30-Day Blueprint"
+    },
+    {
+      "name": "Pooja Sharma",
+      "role": "Content Creator",
+      "avatar": "PS",
+      "stars": 5,
+      "text": "The 3D bookshelf experience is stunning, and the Canva templates inside the Ebook Earning guide saved me at least 20 hours of design headache.",
+      "book": "Ebook Se Earning Guide"
+    },
+    {
+      "name": "Karthik Raja",
+      "role": "Backend Developer",
+      "avatar": "KR",
+      "stars": 5,
+      "text": "The System Design guide is pure gold. Clean visual diagrams, no fluff, straight to production caching and sharding. Highly recommended for every dev!",
+      "book": "Full-Stack System Design Handbook"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I receive my ebook after payment?",
+      "a": "Immediately after payment, you get instant access to download the PDF, along with access to all bonus Notion hubs and Canva templates. A direct backup download link is also sent to your email."
+    },
+    {
+      "q": "Can I read these on my phone, Kindle, or iPad?",
+      "a": "Yes! All guides are provided in universal high-resolution PDF format, fully optimized for smartphones, tablets, Kindles, and desktop screens."
+    },
+    {
+      "q": "What if I am a complete beginner?",
+      "a": "Our guides are intentionally written without jargon, using practical examples, step-by-step checklists, and relatable Hindi-English explanations where applicable."
+    },
+    {
+      "q": "Is there a money-back guarantee?",
+      "a": "Yes, we offer a 100% 30-day money-back guarantee if you don't find genuine, actionable value in any of our premium guides."
+    }
+  ]
+}

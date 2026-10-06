@@ -1,0 +1,20 @@
+{
+  "name": "ebook-hub-monorepo",
+  "version": "2.0.0",
+  "description": "E_Book Hub — 3D Digital Bookshelf & Secure Store (Separated Frontend & Backend)",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "backend": "node backend/server.js"
+  },
+  "keywords": [
+    "ebook-hub",
+    "digital-products",
+    "3d-bookshelf",
+    "nodejs",
+    "razorpay",
+    "admin-dashboard"
+  ],
+  "author": "E_Book Hub",
+  "license": "MIT"
+}

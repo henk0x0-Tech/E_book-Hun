@@ -1,0 +1,18 @@
+{
+  "admin": {
+    "username": "admin",
+    "password": "admin123",
+    "token": "ebh_adm_token_sec_9847192"
+  },
+  "razorpay": {
+    "enabled": true,
+    "keyId": "rzp_test_YourRazorpayKeyId",
+    "keySecret": "YourRazorpayKeySecretHere",
+    "currency": "INR",
+    "mode": "test"
+  },
+  "storage": {
+    "maxUploadSizeMB": 100,
+    "allowedExtensions": [".pdf", ".epub", ".zip"]
+  }
+}

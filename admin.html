@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E_Book Hub — Admin Control Center</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="public/css/admin.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       LOGIN SCREEN OVERLAY
+       ============================================================ -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="login-icon">🔐</div>
+      <h1 class="login-title">Admin Access</h1>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+        Enter your admin credentials to manage ebooks, payments, and downloads.
+      </p>
+
+      <form id="adminLoginForm">
+        <div class="adm-form-group" style="text-align: left; margin-bottom: 1rem;">
+          <label for="adminUsername">Username</label>
+          <input type="text" id="adminUsername" class="adm-input" value="admin" required autocomplete="username">
+        </div>
+
+        <div class="adm-form-group" style="text-align: left; margin-bottom: 1.5rem;">
+          <label for="adminPassword">Master Password</label>
+          <input type="password" id="adminPassword" class="adm-input" placeholder="Enter password (default: admin123)" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn-adm btn-adm-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">
+          Unlock Dashboard →
+        </button>
+        <p id="loginError" style="color: var(--rose); font-size: 0.82rem; margin-top: 0.8rem; display: none;"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ADMIN DASHBOARD LAYOUT
+       ============================================================ -->
+  <div class="admin-layout" id="adminLayout" style="display: none;">
+    
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div>
+        <div class="sidebar-brand">
+          <span>📚</span>
+          <span>E_Book <span style="color: var(--gold);">Hub</span></span>
+          <span class="admin-badge">ADMIN</span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-item active" data-tab="tab-overview">
+            <span class="nav-icon">📊</span>
+            <span>Dashboard</span>
+          </div>
+          <div class="nav-item" data-tab="tab-books">
+            <span class="nav-icon">📚</span>
+            <span>Manage E-Books</span>
+          </div>
+          <div class="nav-item" data-tab="tab-razorpay">
+            <span class="nav-icon">💳</span>
+            <span>Razorpay Payments</span>
+          </div>
+          <div class="nav-item" data-tab="tab-orders">
+            <span class="nav-icon">📦</span>
+            <span>Orders & Downloads</span>
+          </div>
+          <div class="nav-item" data-tab="tab-subscribers">
+            <span class="nav-icon">📧</span>
+            <span>Subscribers</span>
+          </div>
+          <div class="nav-item" data-tab="tab-settings">
+            <span class="nav-icon">⚙️</span>
+            <span>Settings & Security</span>
+          </div>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="index.html" class="btn-adm btn-adm-secondary" style="width: 100%; justify-content: center; font-size: 0.8rem;">
+          🌐 View Live Store ↗
+        </a>
+        <button id="logoutBtn" class="btn-logout">
+          <span>🚪</span>
+          <span>Logout Session</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN PANEL -->
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <div>
+          <h1 id="tabHeading" class="page-title">Dashboard Overview</h1>
+          <p id="tabSubheading" style="color: var(--text-dim); font-size: 0.88rem; margin-top: 0.2rem;">
+            Real-time analytics and store status.
+          </p>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="btnOpenAddBook" class="btn-adm btn-adm-primary">
+            <span>➕</span>
+            <span>Upload New E-Book</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 1: OVERVIEW -->
+      <section id="tab-overview" class="tab-content">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-info">
+              <span class="stat-label">Total Revenue</span>
+              <span id="statRevenue" class="stat-value">₹41,280</span>
+            </div>
+            <div class="stat-icon">💰</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <span class="stat-label">Total Orders</span>
+              <span id="statOrders" class="stat-value">142</span>
+            </div>
+            <div class="stat-icon">📦</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <span class="stat-label">Active E-Books</span>
+              <span id="statBooks" class="stat-value">10</span>
+            </div>
+            <div class="stat-icon">📚</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <span class="stat-label">Subscribers</span>
+              <span id="statSubscribers" class="stat-value">110</span>
+            </div>
+            <div class="stat-icon">💌</div>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="card-header">
+            <h2 class="card-title">Recent Customer Purchases</h2>
+            <button class="btn-adm btn-adm-secondary" onclick="switchTab('tab-orders')">View All Orders</button>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Books</th>
+                  <th>Amount</th>
+                  <th>Payment</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recentOrdersBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: MANAGE & UPLOAD E-BOOKS -->
+      <section id="tab-books" class="tab-content" style="display: none;">
+        <div class="dashboard-card">
+          <div class="card-header">
+            <h2 class="card-title">All Published E-Books</h2>
+            <button id="btnAddNewBook2" class="btn-adm btn-adm-primary">➕ Add / Upload New Book</button>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Book</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Rating</th>
+                  <th>Format / Pages</th>
+                  <th>Security File</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="booksTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: RAZORPAY INTEGRATION -->
+      <section id="tab-razorpay" class="tab-content" style="display: none;">
+        <div class="dashboard-card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Razorpay Payment Gateway</h2>
+              <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 0.2rem;">Configure Razorpay API credentials for instant customer payments.</p>
+            </div>
+            <span id="razorpayStatusBadge" class="razorpay-badge-status test">⚡ TEST MODE</span>
+          </div>
+
+          <form id="razorpaySettingsForm">
+            <div class="form-row-2">
+              <div class="adm-form-group">
+                <label for="rzpKeyId">Razorpay Key ID</label>
+                <input type="text" id="rzpKeyId" class="adm-input" placeholder="rzp_test_... or rzp_live_..." required>
+              </div>
+
+              <div class="adm-form-group">
+                <label for="rzpKeySecret">Razorpay Key Secret</label>
+                <input type="password" id="rzpKeySecret" class="adm-input" placeholder="Enter Razorpay Key Secret" required>
+              </div>
+            </div>
+
+            <div class="form-row-2" style="margin-top: 1rem;">
+              <div class="adm-form-group">
+                <label for="rzpMode">Environment Mode</label>
+                <select id="rzpMode" class="adm-input">
+                  <option value="test">Test Mode (Sandbox / Simulation)</option>
+                  <option value="live">Live Production (Real Money Processing)</option>
+                </select>
+              </div>
+
+              <div class="adm-form-group">
+                <label for="rzpCurrency">Default Currency</label>
+                <select id="rzpCurrency" class="adm-input">
+                  <option value="INR">INR (₹ Indian Rupee)</option>
+                  <option value="USD">USD ($ US Dollar)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem;">
+              <button type="submit" class="btn-adm btn-adm-primary">Save Razorpay Settings</button>
+              <button type="button" id="btnTestRazorpay" class="btn-adm btn-adm-secondary">⚡ Test Connection</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- TAB 4: ORDERS -->
+      <section id="tab-orders" class="tab-content" style="display: none;">
+        <div class="dashboard-card">
+          <div class="card-header">
+            <h2 class="card-title">Customer Orders & Download Tokens</h2>
+            <button id="btnExportOrders" class="btn-adm btn-adm-secondary">📥 Export CSV</button>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order ID / License</th>
+                  <th>Customer / Email</th>
+                  <th>Products</th>
+                  <th>Amount</th>
+                  <th>Payment ID</th>
+                  <th>Download Token</th>
+                  <th>Status & Quota</th>
+                  <th>Security Actions</th>
+                </tr>
+              </thead>
+              <tbody id="ordersFullTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: SUBSCRIBERS -->
+      <section id="tab-subscribers" class="tab-content" style="display: none;">
+        <div class="dashboard-card">
+          <div class="card-header">
+            <h2 class="card-title">Newsletter Subscribers (110+ Leads)</h2>
+            <button id="btnExportSubs" class="btn-adm btn-adm-secondary">📥 Export Emails</button>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Email Address</th>
+                  <th>Status</th>
+                  <th>Reward Code</th>
+                </tr>
+              </thead>
+              <tbody id="subsTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: SETTINGS -->
+      <section id="tab-settings" class="tab-content" style="display: none;">
+        <div class="dashboard-card">
+          <div class="card-header">
+            <h2 class="card-title">Security & Master Password</h2>
+          </div>
+          <form id="changePasswordForm" style="max-width: 500px;">
+            <div class="adm-form-group" style="margin-bottom: 1rem;">
+              <label for="currentAdminPass">Current Master Password</label>
+              <input type="password" id="currentAdminPass" class="adm-input" required>
+            </div>
+            <div class="adm-form-group" style="margin-bottom: 1.5rem;">
+              <label for="newAdminPass">New Master Password</label>
+              <input type="password" id="newAdminPass" class="adm-input" placeholder="At least 6 characters" required>
+            </div>
+            <button type="submit" class="btn-adm btn-adm-primary">Update Master Password</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- UPLOAD / EDIT MODAL -->
+  <div id="bookModalOverlay" class="adm-modal-overlay">
+    <div class="adm-modal">
+      <div class="adm-modal-header">
+        <h2 id="modalBookTitle" style="font-size: 1.3rem; font-weight: 800;">Upload New E-Book</h2>
+        <button id="closeBookModalBtn" class="btn-adm btn-adm-secondary" style="padding: 0.3rem 0.6rem;">✕</button>
+      </div>
+
+      <div class="adm-modal-body">
+        <form id="bookEditorForm">
+          <input type="hidden" id="editBookId">
+
+          <div class="adm-form-group">
+            <label>Secure PDF / Digital Guide File</label>
+            <div id="uploadDropzone" class="upload-dropzone">
+              <div class="dropzone-icon">📄</div>
+              <div style="font-weight: 700; font-size: 1rem;">Drag & drop your eBook PDF here</div>
+              <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.25rem;">or click to browse local files (PDF, EPUB, ZIP - up to 100MB)</p>
+              <input type="file" id="bookFileInput" accept=".pdf,.epub,.zip" style="position: absolute; inset:0; opacity:0; cursor:pointer;">
+              <div id="selectedFileName" style="color: var(--gold); font-size: 0.85rem; font-weight: 700; margin-top: 0.75rem; display:none;"></div>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="adm-form-group">
+              <label for="bkTitle">Full Title</label>
+              <input type="text" id="bkTitle" class="adm-input" placeholder="e.g. AI Automation Blueprint" required>
+            </div>
+            <div class="adm-form-group">
+              <label for="bkShortTitle">Short Spine Label (2-4 words)</label>
+              <input type="text" id="bkShortTitle" class="adm-input" placeholder="e.g. AI Blueprint" required>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="adm-form-group">
+              <label for="bkCategory">Category</label>
+              <select id="bkCategory" class="adm-input" required>
+                <option value="AI & Automation">AI & Automation</option>
+                <option value="Business & Startups">Business & Startups</option>
+                <option value="Self Improvement">Self Improvement</option>
+                <option value="Tech & Coding">Tech & Coding</option>
+                <option value="Free Resources">Free Resources</option>
+              </select>
+            </div>
+            <div class="adm-form-group">
+              <label for="bkBadge">Badge Tag</label>
+              <input type="text" id="bkBadge" class="adm-input" placeholder="e.g. BESTSELLER, HOT, NEW">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="adm-form-group">
+              <label for="bkPrice">Selling Price (₹ INR)</label>
+              <input type="number" id="bkPrice" class="adm-input" placeholder="29 (0 for free)" required min="0">
+            </div>
+            <div class="adm-form-group">
+              <label for="bkOldPrice">Original Price (₹)</label>
+              <input type="number" id="bkOldPrice" class="adm-input" placeholder="299" required min="0">
+            </div>
+          </div>
+
+          <div class="adm-form-group">
+            <label for="bkDesc">Product Description</label>
+            <textarea id="bkDesc" class="adm-input" rows="3" placeholder="2-3 sentences explaining the value..." required></textarea>
+          </div>
+
+          <div class="form-row-2">
+            <div class="adm-form-group">
+              <label for="bkAuthorName">Author Name</label>
+              <input type="text" id="bkAuthorName" class="adm-input" placeholder="e.g. Aryan Sharma" required>
+            </div>
+            <div class="adm-form-group">
+              <label for="bkAuthorRole">Author Role</label>
+              <input type="text" id="bkAuthorRole" class="adm-input" placeholder="e.g. AI Architect" required>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="adm-form-group">
+              <label for="bkCoverColor1">Cover Top Color</label>
+              <input type="color" id="bkCoverColor1" class="adm-input" value="#1e3a8a" style="height: 44px; padding: 4px;">
+            </div>
+            <div class="adm-form-group">
+              <label for="bkCoverColor2">Cover Bottom Color</label>
+              <input type="color" id="bkCoverColor2" class="adm-input" value="#0f172a" style="height: 44px; padding: 4px;">
+            </div>
+          </div>
+
+          <div class="adm-form-group">
+            <label for="bkLearnPoints">What You Will Learn (one point per line)</label>
+            <textarea id="bkLearnPoints" class="adm-input" rows="3" placeholder="Point 1&#10;Point 2&#10;Point 3"></textarea>
+          </div>
+
+          <div class="adm-form-group">
+            <label for="bkSampleExcerpt">Sample Preview Excerpt</label>
+            <textarea id="bkSampleExcerpt" class="adm-input" rows="3" placeholder="Sample excerpt for Look Inside preview..."></textarea>
+          </div>
+
+          <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.75rem;">
+            <button type="button" id="cancelBookBtn" class="btn-adm btn-adm-secondary">Cancel</button>
+            <button type="submit" class="btn-adm btn-adm-primary">Save & Publish to Shelf</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="public/js/admin.js"></script>
+</body>
+</html>

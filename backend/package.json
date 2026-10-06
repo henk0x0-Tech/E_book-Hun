@@ -1,0 +1,19 @@
+{
+  "name": "ebook-hub-backend",
+  "version": "2.0.0",
+  "description": "E_Book Hub Backend REST API & Digital Delivery Engine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ebooks",
+    "backend",
+    "rest-api",
+    "razorpay",
+    "security"
+  ],
+  "author": "E_Book Hub",
+  "license": "MIT"
+}

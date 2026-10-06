@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E_Book Hub — The 3D Digital Bookshelf & Store</title>
+  <meta name="description" content="Discover actionable digital guides and playbooks on AI, Business, Tech, and Self-Growth. Pick a book off our 3D shelf.">
+  
+  <!-- Fonts: Outfit + Cinzel + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="E_Book Hub Home">
+        <span class="brand-icon">📚</span>
+        <span>E_Book<span class="brand-accent">Hub</span></span>
+      </a>
+
+      <div class="nav-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search guides, AI prompts, playbooks..." autocomplete="off">
+        <kbd class="search-kbd">/</kbd>
+      </div>
+
+      <div class="nav-actions">
+        <a href="admin.html" class="btn-icon" title="Admin Control Center" aria-label="Admin Portal">🔐</a>
+        <select id="currencySelect" class="currency-select" aria-label="Select Currency">
+          <option value="INR">₹ INR</option>
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+          <option value="GBP">£ GBP</option>
+        </select>
+
+        <button id="themeToggleBtn" class="btn-icon" aria-label="Toggle Light/Dark Theme">☀️</button>
+
+        <button id="cartBtn" class="btn-icon" aria-label="View Shopping Cart">
+          <span>🛒</span>
+          <span id="cartBadge" class="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-pill">⚡ Instant Digital Access • 100% Actionable Knowledge</div>
+    <h1 id="heroTitle" class="hero-title">
+      Pick a book <br>
+      <span class="hero-title-highlight">off the shelf.</span>
+    </h1>
+    <p class="hero-subtitle">
+      Master AI automation pipelines, solo startups, and high-leverage frameworks with our curated library of concise digital guides.
+    </p>
+
+    <!-- METRICS RIBBON -->
+    <div class="metrics-ribbon">
+      <div class="metric-item">
+        <span class="metric-num">110+</span>
+        <span class="metric-label">Happy Readers</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">4.9 ★</span>
+        <span class="metric-label">Average Rating</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">100%</span>
+        <span class="metric-label">Instant PDF Delivery</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">30-Day</span>
+        <span class="metric-label">Money-Back Guarantee</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY FILTER TOOLBAR -->
+  <nav class="filter-toolbar" aria-label="Categories and sorting">
+    <div class="toolbar-container">
+      <div class="chips-scroll" id="chipsContainer" role="tablist">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+      <div class="sort-container">
+        <label for="sortSelect" class="sort-label">Sort By:</label>
+        <select id="sortSelect" class="sort-select">
+          <option value="popular">🔥 Most Popular</option>
+          <option value="rating">★ Highest Rated</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3D BOOKSHELF MAIN -->
+  <main class="bookshelf-main" id="bookshelfContainer" aria-label="Bookshelf Categories">
+    <!-- Rendered dynamically by app.js -->
+  </main>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" aria-labelledby="testHeading">
+    <div class="section-headline">
+      <h2 id="testHeading">Loved by Creators & Developers</h2>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Join thousands of high-performers transforming their skills.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The AI Income Blueprint paid for itself in 48 hours. The cold outreach framework alone landed me my first $150 international gig!"</p>
+        <div class="test-user">
+          <div class="test-avatar">AV</div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.9rem;">Aman Verma</div>
+            <div style="font-size: 0.78rem; color: var(--text-dim);">Freelance Copywriter</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The 3D interactive bookshelf is gorgeous, and the Canva templates inside the Ebook Earning guide saved me countless design hours."</p>
+        <div class="test-user">
+          <div class="test-avatar">PS</div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.9rem;">Pooja Sharma</div>
+            <div style="font-size: 0.78rem; color: var(--text-dim);">Digital Product Creator</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The System Design handbook is pure gold. Clean visual diagrams, no fluff, straight to production caching and sharding models."</p>
+        <div class="test-user">
+          <div class="test-avatar">KR</div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.9rem;">Karthik Raja</div>
+            <div style="font-size: 0.78rem; color: var(--text-dim);">Principal Backend Engineer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / FREE TOOLKIT -->
+  <section class="free-banner" aria-labelledby="freeTitle">
+    <div class="free-banner-inner">
+      <div class="hero-pill" style="margin-bottom: 0.8rem;">🎁 Free Weekly Drop</div>
+      <h2 id="freeTitle">Get Free AI & Business Guides</h2>
+      <p style="color: var(--text-muted); max-width: 540px; margin: 0 auto;">
+        Join 110+ readers getting weekly actionable toolkits, prompt cheat sheets, and discount codes straight to your inbox.
+      </p>
+
+      <form id="newsletterForm" class="newsletter-form">
+        <input type="email" id="newsletterInput" class="news-input" placeholder="Enter your email address..." required autocomplete="email">
+        <button type="submit" class="btn-primary" style="width: auto; padding: 0.85rem 1.8rem;">Get Free Guides</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <p>© 2025 E_Book Hub • The 3D Digital Bookshelf. Powered by Node.js & Modern CSS.</p>
+    <div class="footer-nav">
+      <a href="#" style="text-decoration: underline;">Terms of Service</a>
+      <a href="#" style="text-decoration: underline;">Privacy Policy</a>
+      <a href="#" style="text-decoration: underline;">Refund Policy</a>
+      <a href="admin.html" style="text-decoration: underline; color: var(--gold);">Admin Portal</a>
+    </div>
+  </footer>
+
+  <!-- MODAL OVERLAY -->
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
+
+  <!-- PRODUCT DETAIL DRAWER -->
+  <aside id="productDrawer" class="drawer-panel" role="dialog" aria-modal="true" aria-label="Book Details">
+    <div class="drawer-header">
+      <span id="drawerCat" class="drawer-category-pill">Category</span>
+      <button id="drawerCloseBtn" class="btn-close" aria-label="Close Drawer">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-book-hero">
+        <div id="drawer3dBook" class="drawer-3d-book">
+          <!-- 3D Book Cover -->
+        </div>
+      </div>
+
+      <div>
+        <h2 id="drawerTitle" class="drawer-book-title">Book Title</h2>
+        <div id="drawerAuthor" class="drawer-author-wrap" style="margin-top: 0.4rem;">Author info</div>
+      </div>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="spec-label">Pages</div>
+          <div id="drawerPages" class="spec-val">80+</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Format</div>
+          <div id="drawerFormat" class="spec-val">PDF</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">File Size</div>
+          <div id="drawerSize" class="spec-val">15 MB</div>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-dim); text-transform: uppercase;">Overview</h4>
+        <p id="drawerDesc" style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;"></p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.9rem; margin-bottom: 0.6rem; color: var(--text-dim); text-transform: uppercase;">What You Will Learn</h4>
+        <div id="drawerLearnList" class="learn-list"></div>
+      </div>
+
+      <div class="drawer-pricing-box">
+        <div>
+          <span id="drawerPriceCurrent" class="price-current">₹29</span>
+          <span id="drawerPriceOriginal" class="price-original">₹299</span>
+        </div>
+        <span id="drawerSavings" class="savings-chip">90% OFF</span>
+      </div>
+
+      <div class="drawer-actions">
+        <button id="drawerBuyBtn" class="btn-primary">⚡ Buy in 1-Click</button>
+        <button id="drawerAddCartBtn" class="btn-secondary">🛒 Add to Cart</button>
+        <button id="drawerSampleBtn" class="btn-secondary" style="border-style: dashed;">📖 Read Free Sample Excerpt</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SAMPLE READER PREVIEW MODAL -->
+  <div id="readerModal" class="reader-modal" role="dialog" aria-modal="true" aria-label="Book Excerpt Preview">
+    <div class="reader-toolbar">
+      <div class="reader-title-wrap">
+        <span id="readerBookTitle" class="reader-book-title">Sample Book</span>
+        <span id="readerChapter" class="reader-chapter-name">Chapter 1 Preview</span>
+      </div>
+      <button id="readerCloseBtn" class="btn-close" aria-label="Close Reader">✕</button>
+    </div>
+    <div id="readerText" class="reader-body-scroll">
+      <!-- Excerpt text rendered here -->
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <aside id="cartDrawer" class="drawer-panel" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <h3 style="font-family: var(--font-display); font-size: 1.2rem;">🛒 Your Digital Bookshelf Cart</h3>
+      <button id="cartCloseBtn" class="btn-close" aria-label="Close Cart">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div id="cartItemsList" class="cart-items-wrap">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <div class="coupon-box" style="margin-top: 1rem;">
+        <input type="text" id="promoInput" class="coupon-input" placeholder="Promo Code (e.g. WELCOME20)">
+        <button id="applyPromoBtn" class="btn-apply">Apply</button>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; margin-top: 1rem; display:flex; flex-direction:column; gap:0.4rem;">
+        <div style="display:flex; justify-content:space-between; font-size: 0.9rem; color: var(--text-muted);">
+          <span>Subtotal:</span>
+          <span id="cartSubtotal">₹0</span>
+        </div>
+        <div id="cartDiscountRow" style="display:none; justify-content:space-between; font-size: 0.9rem; color: var(--emerald);">
+          <span>Discount Applied:</span>
+          <span id="cartDiscountAmt">-₹0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size: 1.3rem; font-weight:800; color: var(--gold-400); margin-top: 0.5rem;">
+          <span>Total:</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+      </div>
+
+      <button id="cartCheckoutBtn" class="btn-primary" style="margin-top: 1rem;">Proceed to Instant Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- INSTANT CHECKOUT MODAL -->
+  <div id="checkoutModal" class="checkout-modal" role="dialog" aria-modal="true" aria-label="Instant Checkout">
+    <button id="checkoutCloseBtn" class="btn-close" style="position: absolute; top: 1.25rem; right: 1.25rem;" aria-label="Close">✕</button>
+
+    <div id="checkoutFormView">
+      <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.25rem;">⚡ Instant Digital Checkout</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">Direct instant download link generated immediately upon completion.</p>
+
+      <div id="checkoutSummaryBox" style="background: rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 0.85rem; margin-bottom: 1rem;">
+        <!-- Order Summary -->
+      </div>
+
+      <form id="checkoutForm">
+        <div class="form-group">
+          <label class="form-label" for="custName">Your Full Name</label>
+          <input type="text" id="custName" class="form-input" placeholder="e.g. Aryan Sharma" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="custEmail">Delivery Email Address (Instant PDF link will be sent here)</label>
+          <input type="email" id="custEmail" class="form-input" placeholder="you@email.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Payment Method</label>
+          <div class="payment-options-grid">
+            <div class="pay-radio-card selected">
+              <span>⚡ Razorpay (UPI / Cards / NetBanking)</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">Proceed to Razorpay Secure Payment</button>
+      </form>
+    </div>
+
+    <!-- ORDER SUCCESS VIEW -->
+    <div id="orderSuccessView" class="order-success-box" style="display: none;">
+      <div class="success-icon-anim">🎉</div>
+      <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--emerald);">Payment Verified & Unlocked!</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">Order ID: <b id="orderIdLabel" style="color: var(--gold-400);">ORD-XXXX</b></p>
+      
+      <!-- DIGITAL LICENSE CARD -->
+      <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 0.85rem; margin: 1rem 0; text-align: left;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.25rem;">
+          <span style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700;">Digital License Key</span>
+          <span style="font-size: 0.72rem; background: var(--emerald); color:#fff; padding: 0.15rem 0.5rem; border-radius: 99px; font-weight: 800;">VERIFIED SINGLE-USER</span>
+        </div>
+        <div id="licenseKeyDisplay" style="font-family: var(--font-mono); font-weight: 800; font-size: 1.05rem; color: var(--gold-400);">LIC-89A7B39E2F</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">🔒 Bound to buyer email • Cryptographic watermark applied</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem;">
+        <button id="downloadBtn" class="download-pill-btn" style="width: 100%;">
+          <span>⬇️</span>
+          <span>Download PDF Guide (Secure Token)</span>
+        </button>
+        <button id="openProtectedReaderBtn" class="btn-secondary" style="border-radius: var(--radius-full); padding: 0.85rem;">
+          <span>📖</span>
+          <span>Read Online (Protected Cloud Viewer)</span>
+        </button>
+      </div>
+
+      <p style="font-size: 0.78rem; color: var(--text-dim); margin-top: 1.25rem;">
+        🛡️ <b>Security Notice:</b> Token is valid for 72 hours (max 5 download quota). You can recover or renew your active tokens anytime using your purchase email.
+      </p>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

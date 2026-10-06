@@ -1,0 +1,24 @@
+[
+  {
+    "orderId": "ORD-INIT-01",
+    "customerName": "Ravi Kumar",
+    "email": "ravi.kumar@example.com",
+    "items": [
+      {
+        "id": 1,
+        "title": "AI Se Paise Kamane Ka 30-Day Blueprint",
+        "price": 29,
+        "qty": 1
+      }
+    ],
+    "subtotal": 29,
+    "discountAmount": 0,
+    "total": 29,
+    "currency": "INR",
+    "paymentMethod": "Razorpay",
+    "paymentId": "pay_sample_test_9012",
+    "downloadToken": "DL-SEC-A91B8C7",
+    "downloadCount": 1,
+    "createdAt": "2026-10-06T18:30:00.000Z"
+  }
+]

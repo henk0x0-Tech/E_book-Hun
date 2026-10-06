@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E_Book Hub — The 3D Digital Bookshelf & Store</title>
+  <meta name="description" content="Discover actionable digital guides and playbooks on AI, Business, Tech, and Self-Growth. Pick a book off our 3D shelf.">
+  
+  <!-- Modern Font Pairing: Outfit + Cinzel + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="E_Book Hub Home">
+        <span class="brand-icon">📚</span>
+        <span>E_Book<span class="brand-accent">Hub</span></span>
+      </a>
+
+      <div class="nav-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search guides, AI prompts, playbooks..." autocomplete="off">
+        <kbd class="search-kbd">/</kbd>
+      </div>
+
+      <div class="nav-actions">
+        <a href="/admin" class="btn-icon" title="Admin Control Center" aria-label="Admin Portal">🔐</a>
+        <select id="currencySelect" class="currency-select" aria-label="Select Currency">
+          <option value="INR">₹ INR</option>
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+          <option value="GBP">£ GBP</option>
+        </select>
+
+        <button id="themeToggleBtn" class="btn-icon" aria-label="Toggle Light/Dark Theme">☀️</button>
+
+        <button id="cartBtn" class="btn-icon" aria-label="View Shopping Cart">
+          <span>🛒</span>
+          <span id="cartBadge" class="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-pill">⚡ Instant Digital Access • 100% Actionable Knowledge</div>
+    <h1 id="heroTitle" class="hero-title">
+      Pick a book <br>
+      <span class="hero-title-highlight">off the shelf.</span>
+    </h1>
+    <p class="hero-subtitle">
+      Master AI automation pipelines, solo startups, and high-leverage frameworks with our curated library of concise digital guides.
+    </p>
+
+    <!-- METRICS RIBBON -->
+    <div class="metrics-ribbon">
+      <div class="metric-item">
+        <span class="metric-num">110+</span>
+        <span class="metric-label">Happy Readers</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">4.9 ★</span>
+        <span class="metric-label">Average Rating</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">100%</span>
+        <span class="metric-label">Instant PDF Delivery</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">30-Day</span>
+        <span class="metric-label">Money-Back Guarantee</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY FILTER TOOLBAR -->
+  <nav class="filter-toolbar" aria-label="Categories and sorting">
+    <div class="toolbar-container">
+      <div class="chips-scroll" id="chipsContainer" role="tablist">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+      <div class="sort-container">
+        <label for="sortSelect" class="sort-label">Sort By:</label>
+        <select id="sortSelect" class="sort-select">
+          <option value="popular">🔥 Most Popular</option>
+          <option value="rating">★ Highest Rated</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3D BOOKSHELF MAIN -->
+  <main class="bookshelf-main" id="bookshelfContainer" aria-label="Bookshelf Categories">
+    <!-- Rendered dynamically by app.js -->
+  </main>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" aria-labelledby="testHeading">
+    <div class="section-headline">
+      <h2 id="testHeading">Loved by Creators & Developers</h2>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Join thousands of high-performers transforming their skills.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The AI Income Blueprint paid for itself in 48 hours. The cold outreach framework alone landed me my first $150 international gig!"</p>
+        <div class="test-user">
+          <div class="test-avatar">AV</div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.9rem;">Aman Verma</div>
+            <div style="font-size: 0.78rem; color: var(--text-dim);">Freelance Copywriter</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The 3D interactive bookshelf is gorgeous, and the Canva templates inside the Ebook Earning guide saved me countless design hours."</p>
+        <div class="test-user">
+          <div class="test-avatar">PS</div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.9rem;">Pooja Sharma</div>
+            <div style="font-size: 0.78rem; color: var(--text-dim);">Digital Product Creator</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The System Design handbook is pure gold. Clean visual diagrams, no fluff, straight to production caching and sharding models."</p>
+        <div class="test-user">
+          <div class="test-avatar">KR</div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.9rem;">Karthik Raja</div>
+            <div style="font-size: 0.78rem; color: var(--text-dim);">Principal Backend Engineer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / FREE TOOLKIT -->
+  <section class="free-banner" aria-labelledby="freeTitle">
+    <div class="free-banner-inner">
+      <div class="hero-pill" style="margin-bottom: 0.8rem;">🎁 Free Weekly Drop</div>
+      <h2 id="freeTitle">Get Free AI & Business Guides</h2>
+      <p style="color: var(--text-muted); max-width: 540px; margin: 0 auto;">
+        Join 110+ readers getting weekly actionable toolkits, prompt cheat sheets, and discount codes straight to your inbox.
+      </p>
+
+      <form id="newsletterForm" class="newsletter-form">
+        <input type="email" id="newsletterInput" class="news-input" placeholder="Enter your email address..." required autocomplete="email">
+        <button type="submit" class="btn-primary" style="width: auto; padding: 0.85rem 1.8rem;">Get Free Guides</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <p>© 2025 E_Book Hub • The 3D Digital Bookshelf. Powered by Node.js & Modern CSS.</p>
+    <div class="footer-nav">
+      <a href="#" style="text-decoration: underline;">Terms of Service</a>
+      <a href="#" style="text-decoration: underline;">Privacy Policy</a>
+      <a href="#" style="text-decoration: underline;">Refund Policy</a>
+      <a href="#" style="text-decoration: underline;">Affiliates</a>
+    </div>
+  </footer>
+
+  <!-- MODAL OVERLAY -->
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
+
+  <!-- PRODUCT DETAIL DRAWER -->
+  <aside id="productDrawer" class="drawer-panel" role="dialog" aria-modal="true" aria-label="Book Details">
+    <div class="drawer-header">
+      <span id="drawerCat" class="drawer-category-pill">Category</span>
+      <button id="drawerCloseBtn" class="btn-close" aria-label="Close Drawer">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-book-hero">
+        <div id="drawer3dBook" class="drawer-3d-book">
+          <!-- 3D Book Cover -->
+        </div>
+      </div>
+
+      <div>
+        <h2 id="drawerTitle" class="drawer-book-title">Book Title</h2>
+        <div id="drawerAuthor" class="drawer-author-wrap" style="margin-top: 0.4rem;">Author info</div>
+      </div>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="spec-label">Pages</div>
+          <div id="drawerPages" class="spec-val">80+</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">Format</div>
+          <div id="drawerFormat" class="spec-val">PDF</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-label">File Size</div>
+          <div id="drawerSize" class="spec-val">15 MB</div>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-dim); text-transform: uppercase;">Overview</h4>
+        <p id="drawerDesc" style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;"></p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.9rem; margin-bottom: 0.6rem; color: var(--text-dim); text-transform: uppercase;">What You Will Learn</h4>
+        <div id="drawerLearnList" class="learn-list"></div>
+      </div>
+
+      <div class="drawer-pricing-box">
+        <div>
+          <span id="drawerPriceCurrent" class="price-current">₹29</span>
+          <span id="drawerPriceOriginal" class="price-original">₹299</span>
+        </div>
+        <span id="drawerSavings" class="savings-chip">90% OFF</span>
+      </div>
+
+      <div class="drawer-actions">
+        <button id="drawerBuyBtn" class="btn-primary">⚡ Buy in 1-Click</button>
+        <button id="drawerAddCartBtn" class="btn-secondary">🛒 Add to Cart</button>
+        <button id="drawerSampleBtn" class="btn-secondary" style="border-style: dashed;">📖 Read Free Sample Excerpt</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SAMPLE READER PREVIEW MODAL -->
+  <div id="readerModal" class="reader-modal" role="dialog" aria-modal="true" aria-label="Book Excerpt Preview">
+    <div class="reader-toolbar">
+      <div class="reader-title-wrap">
+        <span id="readerBookTitle" class="reader-book-title">Sample Book</span>
+        <span id="readerChapter" class="reader-chapter-name">Chapter 1 Preview</span>
+      </div>
+      <button id="readerCloseBtn" class="btn-close" aria-label="Close Reader">✕</button>
+    </div>
+    <div id="readerText" class="reader-body-scroll">
+      <!-- Excerpt text rendered here -->
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <aside id="cartDrawer" class="drawer-panel" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <h3 style="font-family: var(--font-display); font-size: 1.2rem;">🛒 Your Digital Bookshelf Cart</h3>
+      <button id="cartCloseBtn" class="btn-close" aria-label="Close Cart">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div id="cartItemsList" class="cart-items-wrap">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <div class="coupon-box" style="margin-top: 1rem;">
+        <input type="text" id="promoInput" class="coupon-input" placeholder="Promo Code (e.g. WELCOME20)">
+        <button id="applyPromoBtn" class="btn-apply">Apply</button>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; margin-top: 1rem; display:flex; flex-direction:column; gap:0.4rem;">
+        <div style="display:flex; justify-content:space-between; font-size: 0.9rem; color: var(--text-muted);">
+          <span>Subtotal:</span>
+          <span id="cartSubtotal">₹0</span>
+        </div>
+        <div id="cartDiscountRow" style="display:none; justify-content:space-between; font-size: 0.9rem; color: var(--emerald);">
+          <span>Discount Applied:</span>
+          <span id="cartDiscountAmt">-₹0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size: 1.3rem; font-weight:800; color: var(--gold-400); margin-top: 0.5rem;">
+          <span>Total:</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+      </div>
+
+      <button id="cartCheckoutBtn" class="btn-primary" style="margin-top: 1rem;">Proceed to Instant Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- INSTANT CHECKOUT MODAL -->
+  <div id="checkoutModal" class="checkout-modal" role="dialog" aria-modal="true" aria-label="Instant Checkout">
+    <button id="checkoutCloseBtn" class="btn-close" style="position: absolute; top: 1.25rem; right: 1.25rem;" aria-label="Close">✕</button>
+
+    <div id="checkoutFormView">
+      <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.25rem;">⚡ Instant Digital Checkout</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">Direct instant download link generated immediately upon completion.</p>
+
+      <div id="checkoutSummaryBox" style="background: rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 0.85rem; margin-bottom: 1rem;">
+        <!-- Order Summary -->
+      </div>
+
+      <form id="checkoutForm">
+        <div class="form-group">
+          <label class="form-label" for="custName">Your Full Name</label>
+          <input type="text" id="custName" class="form-input" placeholder="e.g. Aryan Sharma" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="custEmail">Delivery Email Address (Instant PDF link will be sent here)</label>
+          <input type="email" id="custEmail" class="form-input" placeholder="you@email.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Payment Method</label>
+          <div class="payment-options-grid">
+            <div class="pay-radio-card selected">
+              <span>⚡ UPI / GPay / PhonePe</span>
+            </div>
+            <div class="pay-radio-card">
+              <span>💳 Credit / Debit Card</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">Complete Order & Download Guides</button>
+      </form>
+    </div>
+
+    <!-- ORDER SUCCESS VIEW -->
+    <div id="orderSuccessView" class="order-success-box" style="display: none;">
+      <div class="success-icon-anim">🎉</div>
+      <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--emerald);">Payment Verified & Unlocked!</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;">Order ID: <b id="orderIdLabel" style="color: var(--gold-400);">ORD-XXXX</b></p>
+      
+      <!-- DIGITAL LICENSE CARD -->
+      <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 0.85rem; margin: 1rem 0; text-align: left;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.25rem;">
+          <span style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700;">Digital License Key</span>
+          <span style="font-size: 0.72rem; background: var(--emerald); color:#fff; padding: 0.15rem 0.5rem; border-radius: 99px; font-weight: 800;">VERIFIED SINGLE-USER</span>
+        </div>
+        <div id="licenseKeyDisplay" style="font-family: var(--font-mono); font-weight: 800; font-size: 1.05rem; color: var(--gold-400);">LIC-89A7B39E2F</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">🔒 Bound to buyer email • Cryptographic watermark applied</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem;">
+        <button id="downloadBtn" class="download-pill-btn" style="width: 100%;">
+          <span>⬇️</span>
+          <span>Download PDF Guide (Secure Token)</span>
+        </button>
+        <button id="openProtectedReaderBtn" class="btn-secondary" style="border-radius: var(--radius-full); padding: 0.85rem;">
+          <span>📖</span>
+          <span>Read Online (Protected Cloud Viewer)</span>
+        </button>
+      </div>
+
+      <p style="font-size: 0.78rem; color: var(--text-dim); margin-top: 1.25rem;">
+        🛡️ <b>Security Notice:</b> Token is valid for 72 hours (max 5 download quota). You can recover or renew your active tokens anytime using your purchase email.
+      </p>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Fallback Embedded Data (ensures 100% offline & direct file execution works immediately) -->
+  <script>
+    window.FALLBACK_DATA = {
+      categories: [
+        { id: "all", name: "All Books", icon: "📚", count: 12 },
+        { id: "ai-automation", name: "AI & Automation", icon: "⚡", count: 3 },
+        { id: "business", name: "Business & Startups", icon: "💼", count: 3 },
+        { id: "self-growth", name: "Self Improvement", icon: "🧠", count: 2 },
+        { id: "tech-tools", name: "Tech & Coding", icon: "💻", count: 2 },
+        { id: "free", name: "Free Resources", icon: "🎁", count: 2 }
+      ],
+      books: [
+        {
+          id: 1,
+          title: "AI Se Paise Kamane Ka 30-Day Blueprint",
+          shortTitle: "AI Income Blueprint",
+          category: "AI & Automation",
+          categoryId: "ai-automation",
+          price: 29,
+          oldPrice: 299,
+          rating: 4.9,
+          reviewsCount: 184,
+          pages: 78,
+          format: "PDF + Notion Hub",
+          fileSize: "14.2 MB",
+          badge: "BESTSELLER",
+          coverColor1: "#1e3a8a",
+          coverColor2: "#0f172a",
+          accentColor: "#60a5fa",
+          description: "A step-by-step 30-day roadmap to generating sustainable digital income using ChatGPT, Midjourney, Claude, and automation pipelines. Zero coding required — fully beginner friendly with practical Hindi-English walkthroughs.",
+          learnPoints: [
+            "Top 10 paying AI freelance services in 2025",
+            "Copy-paste cold outreach templates for international clients",
+            "Automated digital product creation pipeline in under 2 hours",
+            "Step-by-step 30-day execution checklist"
+          ],
+          sampleExcerpt: {
+            chapter: "Chapter 2: Picking Your High-Leverage AI Service",
+            text: "The biggest mistake beginners make is trying to offer everything at once. In this chapter, we narrow down your focus into three high-demand niches: AI Copywriting Systems, Automated Lead Research, and Repurposing Long-form Content into Viral Short Clips. When you position yourself as a specialist solving one painful bottleneck, client acquisition transforms from begging for gigs to closing high-ticket retainers."
+          },
+          author: { name: "Aryan Sharma", role: "AI Automation Architect" }
+        },
+        {
+          id: 2,
+          title: "ChatGPT & Claude Prompt Engineering Mastery",
+          shortTitle: "ChatGPT Mastery",
+          category: "AI & Automation",
+          categoryId: "ai-automation",
+          price: 49,
+          oldPrice: 349,
+          rating: 4.95,
+          reviewsCount: 240,
+          pages: 112,
+          format: "Interactive PDF + Prompt Vault",
+          fileSize: "22.5 MB",
+          badge: "HOT",
+          coverColor1: "#0d9488",
+          coverColor2: "#042f2e",
+          accentColor: "#2dd4bf",
+          description: "250+ battle-tested prompt architectures and systemic frameworks to 10x your cognitive throughput. Covers deep research, coding debugging, content strategy, financial analysis, and autonomous workflow chains.",
+          learnPoints: [
+            "Few-shot, Chain-of-Thought, and Meta-prompting secrets",
+            "Building autonomous mini-agents inside Claude & GPT-4o",
+            "250+ categorized copy-paste prompt templates for instant results",
+            "Reverse-engineering complex problems into structured LLM outputs"
+          ],
+          sampleExcerpt: {
+            chapter: "Framework 03: The Persona-Context-Constraint Protocol",
+            text: "Generic prompts produce generic outputs. By enforcing strict persona definition, precise contextual parameters, negative constraints, and output schema templates, you extract top 1% model outputs every single time. Here is the exact template you should use before asking any LLM a complex reasoning problem..."
+          },
+          author: { name: "Kavya Patel", role: "Prompt Systems Engineer" }
+        },
+        {
+          id: 3,
+          title: "Ebook Se Earning Guide: 0 to ₹50,000/Month",
+          shortTitle: "Ebook Blueprint",
+          category: "Business & Startups",
+          categoryId: "business",
+          price: 39,
+          oldPrice: 499,
+          rating: 4.85,
+          reviewsCount: 156,
+          pages: 94,
+          format: "PDF + Canva Templates",
+          fileSize: "31.0 MB",
+          badge: "TRENDING",
+          coverColor1: "#15803d",
+          coverColor2: "#052e16",
+          accentColor: "#4ade80",
+          description: "The complete roadmap from finding a hungry niche to packaging, pricing, designing with Canva, and launching your digital guides without spending money on ads.",
+          learnPoints: [
+            "Finding high-intent problems people willingly pay ₹199-₹999 for",
+            "Pre-built Canva cover & interior layout templates included",
+            "Setting up Razorpay/Gumroad frictionless checkout in 10 minutes",
+            "Organic distribution playbooks on Instagram, Threads & Twitter"
+          ],
+          sampleExcerpt: {
+            chapter: "Chapter 4: The 48-Hour Micro-Book Creation Sprint",
+            text: "You do not need a 300-page book to deliver immense value. In fact, modern buyers prefer high-density, no-fluff 30-to-60 page guides that solve one specific problem in one sitting. When you outline with our problem-solution tree, drafting the entire book takes two focused afternoons."
+          },
+          author: { name: "Rohan Deshmukh", role: "Digital Product Builder" }
+        },
+        {
+          id: 4,
+          title: "Rich Dad Financial Frameworks (Hinglish Edition)",
+          shortTitle: "Rich Dad Hinglish",
+          category: "Self Improvement",
+          categoryId: "self-growth",
+          price: 19,
+          oldPrice: 499,
+          rating: 4.9,
+          reviewsCount: 312,
+          pages: 64,
+          format: "Illustrated PDF Summary",
+          fileSize: "11.8 MB",
+          badge: "POPULAR",
+          coverColor1: "#9333ea",
+          coverColor2: "#3b0764",
+          accentColor: "#c084fc",
+          description: "Essential wealth-building principles explained in clear, relatable conversational Hinglish. Unpack cashflow quadrants, asset accumulation, and financial mindset in under 45 minutes of reading.",
+          learnPoints: [
+            "Assets vs Liabilities: The simple distinction that alters wealth",
+            "The Cashflow Quadrant adapted for Indian freelancers & professionals",
+            "Escape the paycheck-to-paycheck cycle with automated investing",
+            "Tax strategy and wealth preservation mental models"
+          ],
+          sampleExcerpt: {
+            chapter: "Rule 1: Assets vs Liabilities Ka Asli Matlab",
+            text: "Garib aur middle class log aisi cheezon ko assets samajh kar kharidte hain jo asal me unki jeb se paisa bahar nikaalti hain. Ek asali asset wo hai jo aapki jeb me paisa daale bina aapke physical presence ke. Jab tak aapka active income assets khareedne me invest nahi hota, tab tak aap rat race me phas rehte hain..."
+          },
+          author: { name: "Vikram Mehta", role: "Financial Wellness Coach" }
+        },
+        {
+          id: 5,
+          title: "The Micro-SaaS Playbook: Solo Founder Roadmap",
+          shortTitle: "Micro-SaaS Bible",
+          category: "Business & Startups",
+          categoryId: "business",
+          price: 59,
+          oldPrice: 599,
+          rating: 4.92,
+          reviewsCount: 110,
+          pages: 140,
+          format: "PDF + Notion Starter Kit",
+          fileSize: "18.4 MB",
+          badge: "PRO",
+          coverColor1: "#ea580c",
+          coverColor2: "#431407",
+          accentColor: "#fb923c",
+          description: "How to validate, build, launch, and scale recurring-revenue software products as a single developer. Includes financial models, pricing strategy, and automated churn reduction frameworks.",
+          learnPoints: [
+            "Unbundling niche enterprise tools into lean $29/mo web utilities",
+            "No-code / low-code stacks that allow shipping MVPs in 7 days",
+            "Cold outreach & ProductHunt launch playbook that got 1,000+ signups",
+            "Stripe billing integration patterns & MRR optimization"
+          ],
+          sampleExcerpt: {
+            chapter: "Chapter 1: The Razor-Thin Niche Strategy",
+            text: "Do not build another general project management tool. Build a compliance tracker specifically for Canadian dental clinics. The narrower your positioning, the less marketing friction you will face, and the higher pricing power you command."
+          },
+          author: { name: "Nikhil Varma", role: "Solo Founder ($12k MRR)" }
+        },
+        {
+          id: 6,
+          title: "Full-Stack System Design for High-Scale Apps",
+          shortTitle: "System Design Handbook",
+          category: "Tech & Coding",
+          categoryId: "tech-tools",
+          price: 49,
+          oldPrice: 449,
+          rating: 4.88,
+          reviewsCount: 98,
+          pages: 130,
+          format: "PDF + 40 Architecture Diagrams",
+          fileSize: "26.1 MB",
+          badge: "DEV CHOICE",
+          coverColor1: "#0284c7",
+          coverColor2: "#082f49",
+          accentColor: "#38bdf8",
+          description: "Visual blueprints for caching, load balancing, sharding, microservices communication, message queues, and distributed databases for high-traffic applications.",
+          learnPoints: [
+            "Caching strategies (Write-Through, Write-Back, Cache-Aside) with Redis",
+            "CAP theorem and SQL vs NoSQL trade-offs broken down visually",
+            "Rate limiting algorithms (Token Bucket, Leaky Bucket, Sliding Window)",
+            "Real-world case studies: WhatsApp, YouTube, and Uber architectures"
+          ],
+          sampleExcerpt: {
+            chapter: "Chapter 5: Designing for Zero-Downtime Cache Invalidation",
+            text: "There are only two hard things in Computer Science: cache invalidation and naming things. In this chapter, we study stale-while-revalidate protocols combined with Redis pub/sub channels to guarantee near-instant propagation across edge clusters."
+          },
+          author: { name: "Devansh Roy", role: "Principal Systems Engineer" }
+        },
+        {
+          id: 7,
+          title: "Atomic Focus: Deep Work & Anti-Distraction Guide",
+          shortTitle: "Atomic Focus",
+          category: "Self Improvement",
+          categoryId: "self-growth",
+          price: 25,
+          oldPrice: 399,
+          rating: 4.94,
+          reviewsCount: 215,
+          pages: 88,
+          format: "PDF + Daily Habit Tracker Sheet",
+          fileSize: "9.5 MB",
+          badge: "HIGHLY RATED",
+          coverColor1: "#be123c",
+          coverColor2: "#4c0519",
+          accentColor: "#fb7185",
+          description: "Neuroscience-backed protocols to eliminate brain fog, destroy phone addiction, structure 4-hour daily deep work blocks, and achieve elite creative output.",
+          learnPoints: [
+            "Dopamine reset blueprint to regain mental clarity in 72 hours",
+            "The 90-minute ultradian rhythm scheduling system",
+            "Digital environment design that makes distraction friction impossible",
+            "Evening shutdown ritual that ensures deep restorative sleep"
+          ],
+          sampleExcerpt: {
+            chapter: "Protocol 2: The Friction Inversion Method",
+            text: "Willpower is a depletable battery. If you rely on discipline to resist scrolling infinite feeds, you will lose by 4 PM. Instead, we invert friction: make shallow distractions take at least 3 distinct physical actions to access, while making deep work one click away."
+          },
+          author: { name: "Dr. Sameer Sen", role: "Cognitive Performance Researcher" }
+        },
+        {
+          id: 8,
+          title: "Modern JavaScript & Node.js Production Architecture",
+          shortTitle: "Node.js Mastery",
+          category: "Tech & Coding",
+          categoryId: "tech-tools",
+          price: 39,
+          oldPrice: 399,
+          rating: 4.91,
+          reviewsCount: 142,
+          pages: 120,
+          format: "PDF + GitHub Repo Access",
+          fileSize: "19.8 MB",
+          badge: "POPULAR",
+          coverColor1: "#ca8a04",
+          coverColor2: "#422006",
+          accentColor: "#facc15",
+          description: "Production-grade backend engineering with Node.js, event loops, clustering, JWT authentication, secure REST/GraphQL APIs, Dockerization, and monitoring.",
+          learnPoints: [
+            "Event loop internals: libuv, microtasks queue, thread pool optimization",
+            "Security hardening: helmet, rate limiting, SQL/NoSQL injection prevention",
+            "Structured logging, health checks, and OpenTelemetry instrumentation",
+            "Zero-downtime deployment pipelines with Docker and PM2"
+          ],
+          sampleExcerpt: {
+            chapter: "Chapter 3: Mastering Non-Blocking I/O and Memory Leaks",
+            text: "A single unhandled promise rejection or an unbounded in-memory array can crash a Node.js process under load. In this section, we build automated heap snapshot profilers and worker thread pools for CPU-heavy tasks."
+          },
+          author: { name: "Tanmay Joshi", role: "Senior Backend Architect" }
+        },
+        {
+          id: 9,
+          title: "The Ultimate 100+ AI Tools & Prompt Cheat Sheet",
+          shortTitle: "100+ AI Tools Vault",
+          category: "Free Resources",
+          categoryId: "free",
+          price: 0,
+          oldPrice: 199,
+          rating: 4.97,
+          reviewsCount: 840,
+          pages: 45,
+          format: "Free Instant PDF + Notion Database",
+          fileSize: "8.1 MB",
+          badge: "100% FREE",
+          coverColor1: "#0284c7",
+          coverColor2: "#0c4a6e",
+          accentColor: "#38bdf8",
+          description: "Curated directory of the 100 most powerful AI tools across design, coding, writing, video generation, audio, and marketing. Includes direct links and prompt cheat sheets.",
+          learnPoints: [
+            "Top free alternatives to paid AI software",
+            "Categorized workflow stacks for creators, coders, and founders",
+            "Instant one-click copy prompt formulas",
+            "Regularly updated Notion database access"
+          ],
+          sampleExcerpt: {
+            chapter: "Curated Stack: High-Speed Content Production",
+            text: "Combine Claude 3.5 Sonnet for structural outlines, Ideogram 2.0 for typographic graphic assets, and ElevenLabs for crystal clear human voiceover to produce studio-grade digital assets in minutes."
+          },
+          author: { name: "E_Book Hub Editorial", role: "Curated Research Team" }
+        },
+        {
+          id: 10,
+          title: "Digital Creator Launch Checklist & Tax Guide",
+          shortTitle: "Creator Toolkit",
+          category: "Free Resources",
+          categoryId: "free",
+          price: 0,
+          oldPrice: 249,
+          rating: 4.9,
+          reviewsCount: 420,
+          pages: 38,
+          format: "Free PDF Checklist + Excel Calculator",
+          fileSize: "6.4 MB",
+          badge: "100% FREE",
+          coverColor1: "#d97706",
+          coverColor2: "#451a03",
+          accentColor: "#fbbf24",
+          description: "Essential legal, payment setup, pricing calculator, and GST/income tax guidelines for Indian digital creators and online freelancers starting out.",
+          learnPoints: [
+            "Step-by-step payment gateway setup checklist (Domestic & International)",
+            "Pricing calculator spreadsheet with tax estimation",
+            "Terms of service and refund policy templates for digital goods",
+            "Invoicing format for global remittances (FIRC guidelines)"
+          ],
+          sampleExcerpt: {
+            chapter: "Checklist Item 04: International Payment Compliance",
+            text: "When receiving USD or EUR payments via Stripe or PayPal, always ensure your bank account is mapped for automatic Purpose Code generation (P0802 for software/digital products) to avoid foreign exchange delays."
+          },
+          author: { name: "E_Book Hub Legal", role: "Specialized Advisory" }
+        }
+      ]
+    };
+  </script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
